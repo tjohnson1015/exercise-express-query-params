@@ -2,6 +2,15 @@
 
 You are working on a team of developers and another team member has developed a "Service" that will interact with a "database" and get back products.
 
+## Getting Started
+
+1. Fork this repo using the button on this page
+2. Clone it onto your computer (after changing into your projects folder)
+3. Change into the directory
+4. Install the node dependencies by running `npm install`
+
+### Initial Solution
+
 The service has been imported into the `server.js` file for you. Your job is to create a RESTful API while implementing the service. You should have the following APIs:
 
 * Get All Products
