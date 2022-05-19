@@ -573,9 +573,9 @@ const products = [
 function sortBy(products, sort = 'id', order = 'ASC') {
   return products.sort((a, b) => {
     if (order === 'ASC') {
-      return a[sort] - b[sort]
+      return a[sort] < b[sort] ? -1 : 1
     } else {
-      return b[sort] - a[sort]
+      return a[sort] > b[sort] ? -1 : 1
     }
   })
 }
