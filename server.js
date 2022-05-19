@@ -24,6 +24,24 @@ app.get('/api/v1/products', (req, res) => {
   res.json(products)
 })
 
+app.get('/api/v1/products/search', (req, res) => {
+  // get search details from query string
+  const key = req.query.key
+  const value = req.query.value
+  // set sort and order properties or default to 'id' and 'ASC'
+  const sortBy = req.query.sort || 'id'
+  const order = req.query.order || 'ASC'
+  // if no search details, send error response and return
+  if (!key || !value) {
+    res.status(400).json({ error: 'Invalid search query' })
+    return
+  }
+  // use service to search products by query
+  const products = productsService.search(key, value, sortBy, order)
+  // send response
+  res.json(products)
+})
+
 // Get Product By Id
 app.get('/api/v1/products/:id', (req, res) => {
   // check if id is a valid number
