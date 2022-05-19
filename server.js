@@ -14,8 +14,12 @@ app.get('/', (req, res) => res.send('Build the API!'))
 // Build Routes
 // Get All Products
 app.get('/api/v1/products', (req, res) => {
-  // use service to get all products
-  const products = productsService.findAll()
+  // set sort property or default to 'id'
+  const sortBy = req.query.sort || 'id'
+  // set sort direction or default to 'ASC'
+  const order = req.query.order || 'ASC'
+  // use service to get all products with sort and order
+  const products = productsService.findAll(sortBy, order)
   // send response
   res.json(products)
 })
