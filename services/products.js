@@ -587,7 +587,7 @@ function sortBy(products, sort = 'id', order = 'ASC') {
  * @returns {Products[]}
  */
 function filterBy(products, key, value) {
-  return products.filter(product => key && value ? product[key] === value : true)
+  return products.filter(product => key && value ? product[key].toString().includes(value) : true)
 }
 
 /**
