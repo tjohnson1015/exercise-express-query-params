@@ -31,7 +31,7 @@ The product owner has decided that it would be good to implement sorting for the
 
 ### Implement Search
 
-After implementing search, the product owner has requested that you implement search. Fortunately, your team has already implemented a search method on the products service as well.
+After implementing sorting, the product owner has requested that you implement search. Fortunately, your team has already implemented a search method on the products service as well.
 
 Add a the ability to search products to your API:
 * Example request URL: `/api/v1/products/search?key=name&value=iPhone`
